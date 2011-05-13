@@ -1,0 +1,6 @@
+<%= form_for(@person) do |f| %>
+    <% Category.all.each do |c| %>
+        <%= check_box_tag "person[category_ids][]", c.id, @person.categories.include?(c) %> <%= c.name %><br>
+    <% end %>
+    <%= f.submit "Show me!" %>
+<% end %>
